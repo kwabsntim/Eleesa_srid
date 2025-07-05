@@ -1,6 +1,6 @@
 # 🎓 Departmental Website – Eleesa-srid
 
-Welcome to the official repository of the **Departmental Website** developed for the [Electrical and Electronics Association], [UMaT SRID]. This web application is designed to serve as a central hub for students, lecturers, and visitors to access important information, resources, and interactive features.
+Welcome to the official repository of the **Departmental Website** developed for the *Electrical and Electronics Association*, *UMaT SRID*. This web application is designed to serve as a central hub for students, lecturers, and visitors to access important information, resources, and interactive features.
 
 ---
 
