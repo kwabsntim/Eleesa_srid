@@ -1,0 +1,959 @@
+body{
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  
+    
+}
+@font-face {
+  font-family: 'Rennie Bean';
+  src: url('fonts/ReenieBeanie.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.bgImage{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/static/images/im1.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center ;
+    animation: bgChange 40s linear infinite;
+}
+@keyframes bgChange {
+    0% {
+        background-image: url('/static/images/im1.PNG'); /* Show for 4 seconds */
+    }
+    20% {
+        background-image: url('/static/images/im2.PNG'); /* Show for 6 seconds */
+    }
+    50% {
+        background-image: url('/static/images/promise.jpg'); /* Show for 5 seconds */
+    }
+    75% {
+        background-image: url('/static/images/im4.jpg'); /* Show for 3 seconds */
+    }
+    100% {
+        background-image: url('/static/images/im1.PNG'); /* Reset to first image */
+    }
+    
+}
+.blog{
+  text-decoration: none;
+  color: black;
+}
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    padding-bottom: 2px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.5s ease;
+  }
+  
+  .nav-link:hover {
+    border-color:white;
+    color: whitesmoke
+  }
+  
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top:0px;
+    left: 0px;
+    color: white;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.hamburger{
+    color:white;
+}
+
+/* The Overlay (background) */
+.sidenav {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width:0;
+    position: fixed; /* Stay in place */
+     /* Sit on top */
+    right:0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgb(23,90,171); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.6s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .sidenavc {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .sidenav a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color:white;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover, .sidenav a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 9px;
+    right: 45px;
+    font-size: 50px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .sidenav a {font-size: 20px}
+    .sidenav .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+.content{
+    position: relative;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index:2;
+    color: white;
+}
+#navbar {
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    height: 110px;
+  }
+
+  /* Scrolled navbar style */
+  #navbar.scrolled {
+    background-color:rgb(23,90,171);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+.navbar-brand{
+    color: white ;
+    text-decoration: none;
+    font-size:60px;
+    font-weight: 500;
+}
+.logo{
+    width: 80px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-top: 3px;
+
+}
+.executives{
+    padding:30px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:10px;
+
+}
+.navbar-nav a {
+        position: relative;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 21px;
+        display: inline-block;
+        margin-left: auto;
+      
+        font-weight: 700;
+    
+}
+.leaders{
+  text-align: center;
+}
+.leadership{
+  text-align: center;
+  color:rgb(23,90,171);
+  font-family: 'Yeseva one';
+  margin-bottom: 50px;
+  
+}
+
+.departments{
+  margin-top: 30px;
+  text-align: center;
+  margin-left:10px;
+  margin-right:10px;
+  padding-bottom:50px;
+}
+.inside-logo{
+  margin-bottom: 30px;
+  color:white
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 20px;
+  
+  
+}
+
+.counter {
+  font-size: 100px;
+  font-weight: bold;
+  color:white;
+  font-family: 'Rennie Bean', serif;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.top-buttons{
+    display: inline;
+    margin-top: 80px;
+    
+}
+.top-buttons a{
+    
+    background-color:rgb(23,90,171);
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding:25px;
+    padding-left:40px;
+    padding-right: 40px;
+    border-radius: 9px;
+    box-shadow: rgba(0,0,0,0.5);/* Add appropriate property value */
+}
+.events{
+  font-family: 'Yeseva One';
+  color:white;
+  text-align: center;
+  margin-bottom:20px;
+  font-size:45px;
+  margin-top:60px;
+}
+.blog-post{
+  font-family: 'Rennie Bean';
+  text-align: center;
+  font-size:50px;
+  font-style: italic;
+}
+.News{
+  font-family: 'Yeseva One';
+  text-align: center;
+  font-size:45px;
+  margin-bottom:10px;
+  
+}
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.news-cards{
+  padding-bottom:5px;
+}
+
+/* News Card */
+.news-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Wrapper */
+.image-wrapper {
+  position: relative;
+}
+
+.news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* News Date */
+.news-date {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background: rgba(0,0,255, 0.8);
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-top:150px;
+}
+
+/* News Content */
+.news-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+  color: #333333;
+}
+
+.news-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #555555;
+  display: none; /* Hidden by default */
+}
+
+.news-card:hover .news-description {
+  display: block; /* Show on hover */
+}
+
+/* Read More Button */
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.read-more-button:hover {
+  background-color: #0056b3;
+}
+
+.event-card {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  color:black;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Overlay for Text */
+
+
+.event-title {
+  font-size: 2.0rem;
+  margin: 0 0 10px;
+  margin-top:35px;
+  font-family: 'Rennie Bean';
+}
+
+.event-date {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.event-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top:20px;
+}
+
+/* Button Styling */
+.event-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: linear-gradient(to right, #007bff 50%, #0056b3 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  border: none;
+  border-radius: 12px;
+  transition: background-position 0.4s ease;
+  cursor: pointer;
+}
+
+.event-button:hover {
+  background-position: right bottom;
+  color: #ffffff;
+  text-decoration:none;
+
+} /* K
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-card {
+    height: 300px;
+    margin-bottom:70px;
+    padding-bottom: 20px;
+  }
+  .vents{
+    min-height: 650px;
+  }
+
+  .event-title {
+    font-size: 1.25rem;
+  }
+
+  .event-description {
+    font-size: 0.9rem;
+  }
+}
+.vents{
+  background-image: url("/static/images/im5.jpg"); /* Replace with your image */
+  min-height: 630px; /* Adjust height as needed */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.esection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Adjust height as needed */
+}
+.events-text{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  background-color:rgba(0, 0, 255, 0.8) ;
+  padding: 20px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 140vh;
+  padding: 20px;
+  margin-bottom: 90px;
+
+}
+
+.text-section {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.carousel-section {
+  flex: 1 1 50%;
+  max-width:100%;
+ 
+}
+
+.carousel-inner img {
+  object-fit: cover;
+  height:45%;
+  border-radius:30px;
+  
+}
+
+.carousel {
+  max-height: 400px;
+  
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+  .carousel-inner img {
+    object-fit: cover;
+    height: 100%;
+   ;
+  }
+  .carousel-section {
+      order: -1;
+      width: 100%;
+  }
+
+  .text-section {
+      width: 100%;
+      text-align: center;
+  }
+}
+.footer {
+  position: relative;
+  background: url("/static/images/gb.jpg") no-repeat center center/cover;
+  color: #fff;
+}
+
+.footer-overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ddd;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-icons a {
+  background: #fff;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 12px;
+  color: #ccc;
+}
+
+
+
+@media (max-width: 768px) {
+  .eleesa-girls, .pix {
+   margin-left: 0;
+   text-align: center;
+  }
+}
+.top-buttons a:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #000;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+  
+}
+.mvv{
+  
+  padding-bottom: 40px;
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+
+  
+  
+}
+.stats{
+  font-family: 'Rennie Bean';
+  text-align: center;
+  font-style: italic;
+  font-size:50px;
+  margin-top:35px;
+}
+.cm{
+  font-family:'Rennie Bean';
+  font-size:40px;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:30px;
+  margin-top:155px;
+}
+.down-buton{
+  margin-top: 10px;
+}
+
+.down-buttons{
+  background-color:rgb(23,90,171) ;
+  text-decoration: none;
+  color: white;
+  padding:25px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius:10px;
+  font-size:15px;
+  background-size: 200% auto;
+transition: background-position 0.3s ease;
+}
+.down-buttons:hover{
+  color:white;
+  text-decoration: none;
+  border-radius: 30px;
+transform: scale(0.9);
+transition: transform 0.3s ease;
+background-position: right center;
+}
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.team-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 340px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.member-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.member-info {
+  padding: 15px;
+}
+
+.member-info h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.member-info p {
+  font-size: 16px;
+  color: #666;
+}
+
+
+.card{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+
+.over-text{
+
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 16px;
+    margin: 20px;
+}
+.over-text p{
+  font-size: 16px;
+}
+.intro, .outro,.icons,.top-buttons {
+    opacity: 0;
+  }
+  
+  /* Pop-up animation for the intro */
+  .intro {
+    animation: popUp 2s ease-out forwards;
+  }
+  
+  /* Slide-in animation for the outro */
+  .outro {
+    animation: slideIn 1s ease-out 0.5s forwards;
+  }
+ .icons{
+    animation: icons 1s ease-out 0.5s forwards;
+ }
+ .top-buttons{
+    animation: button 1s ease-out 0.5s forwards;
+ }
+
+  /* Keyframes for pop-up animation */
+  @keyframes popUp {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Keyframes for slide-in animation */
+  @keyframes slideIn {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0.3);
+      opacity: 1;
+    }
+  }
+  @keyframes icons {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0.3);
+      opacity: 1;
+    }
+  }
+  @keyframes button {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-0.4px);
+      opacity: 1;
+    }
+  }
+.navbar-nav {
+    margin-left: auto; /* Push the links to the right */
+  }
+  
+.intro{
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'Yeseva one', sans-serif;
+    margin-left: 10px;
+    font-style: bold;
+    margin-top: 100px;
+}
+.parallax2{
+  background-image: url("/static/images/im3.jpg"); /* Replace with your image */
+  min-height: 500px; /* Adjust height as needed */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; /* Needed to position the overlay text */
+}
+.parallax-text2{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+.parallax {
+    background-image: url("/static/images/je.jpg"); /* Replace with your image */
+    min-height: 500px; /* Adjust height as needed */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Needed to position the overlay text */
+  }
+
+  /* Overlay text styling */
+  .parallax .parallax-text {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  
+  
+  }
+
+ 
+
+  .courses{
+        background-image: url("im1.PNG"); /* Replace with your image */
+    min-height: 350px; /* Adjust height as needed */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Needed to position the overlay text */
+  }
+  .cbuttons{
+          position: absolute;
+    width: 100%;
+    height:100%;
+;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+
+  
+  .after-p {
+    min-height: auto; /* Extra content to enable scrolling */
+    background-color: #f4f4f4;
+    padding: 20px;
+    font-size: 18px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+
+.icons{
+    margin-top: 20px;
+    margin-left: 2px;
+    
+
+}
+.icons a{
+    text-decoration: none;
+    color:white;
+    margin-left: 10px;
+}
+svg:hover{
+color:white;
+transform: scale(1.3);
+transition: transform 0.5s ease;
+cursor:pointer;
+}
+.outro{
+    font-size: 45px;
+    text-align: center;
+    font-family:'Rennie Bean';
+    
+   
+}
+@media (max-width: 768px) {
+    body{
+      overflow-x: hidden;
+    }
+    .intro {
+        font-size: 35px;
+    }
+   
+    .content {
+        padding: 20px;
+        margin-bottom:50px;
+    }
+    .outro{
+        font-size: 19px;
+    }
+    .logo{
+        margin-left:2px;
+    }
+    .mvv{
+      margin:40px;
+    }
+    .card{
+      width:18rem;
+    }
+    .cm{
+      font-size:30px;
+    }
+   
+}
+
+@media (max-width: 480px) {
+    .intro {
+        font-size: 30px;
+    }
+    .content {
+        padding: 10px;
+        
+    }
+    .outro{
+        font-size: 19px;
+        margin-left: 10px;
+    }
+    .logo{
+        margin-left: 2px;
+    }
+    .card{
+      width:18rem;
+    }
+}
